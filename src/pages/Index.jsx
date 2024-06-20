@@ -39,8 +39,8 @@ const Index = () => {
               { src: "/images/video3.jpg", title: "Video Title 3" },
               { src: "/images/video4.jpg", title: "Video Title 4" },
               { src: "/images/video5.jpg", title: "Video Title 5" },
-              { src: "/images/video6.jpg", title: "Video Title 6" },
-              { src: "/images/video7.jpg", title: "Video Title 7" },
+              { src: "/images/video6-correct.jpg", title: "Video Title 6" },
+              { src: "/images/video7-correct.jpg", title: "Video Title 7" },
               { src: "/images/video8.jpg", title: "Video Title 8" },
               { src: "/images/video9.jpg", title: "Video Title 9" },
             ].map((video, index) => (
