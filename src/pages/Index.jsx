@@ -32,7 +32,7 @@ const Index = () => {
 
         {/* Video Section */}
         <Box w="80%" p={4}>
-          <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+          <Grid templateColumns="repeat(3, 1fr)" gap={6} p={4}>
             {[
               { src: "/images/video1.jpg", title: "How to Cook the Perfect Steak" },
               { src: "/images/video2.jpg", title: "Top 10 Travel Destinations for 2023" },
@@ -44,8 +44,8 @@ const Index = () => {
               { src: "/images/video8.jpg", title: "The History of Ancient Civilizations" },
               { src: "/images/video9.jpg", title: "How to Build a Successful Online Business" },
             ].map((video, index) => (
-              <GridItem key={index} w="100%" h="200px" bg="gray.200">
-                <Image src={video.src} alt={video.title} />
+              <GridItem key={index} w="100%" h="200px" bg="gray.200" p={2} borderRadius="15px" boxShadow="md">
+                <Image src={video.src} alt={video.title} borderRadius="15px" />
                 <Text mt={2}>{video.title}</Text>
               </GridItem>
             ))}
