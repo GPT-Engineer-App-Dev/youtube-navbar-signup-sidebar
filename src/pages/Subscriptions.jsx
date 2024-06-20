@@ -1,21 +1,22 @@
-import { Box, Text, Flex, VStack, Heading, Button } from "@chakra-ui/react";
+import { Box, Text, Flex, VStack, Heading, Button, Icon } from "@chakra-ui/react";
+import { FaCheckCircle } from "react-icons/fa";
 
 const Subscriptions = () => {
   const plans = [
     {
       name: "Basic Plan",
       price: "$9.99/month",
-      features: ["Feature 1", "Feature 2", "Feature 3"],
+      features: ["Access to basic content", "Standard video quality", "Limited support"],
     },
     {
       name: "Standard Plan",
       price: "$19.99/month",
-      features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"],
+      features: ["Access to all content", "HD video quality", "Priority support", "Offline downloads"],
     },
     {
       name: "Premium Plan",
       price: "$29.99/month",
-      features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4", "Feature 5"],
+      features: ["Access to all content", "4K video quality", "24/7 support", "Offline downloads", "Ad-free experience"],
     },
   ];
 
@@ -35,6 +36,9 @@ const Subscriptions = () => {
             bg="white"
             boxShadow="md"
             width="300px"
+            display="flex"
+            flexDirection="column"
+            justifyContent="space-between"
           >
             <VStack spacing={4}>
               <Heading as="h2" size="md">
@@ -45,13 +49,16 @@ const Subscriptions = () => {
               </Text>
               <VStack spacing={2} alignItems="start">
                 {plan.features.map((feature, idx) => (
-                  <Text key={idx}>{feature}</Text>
+                  <Flex key={idx} align="center">
+                    <Icon as={FaCheckCircle} color="green.500" mr={2} />
+                    <Text>{feature}</Text>
+                  </Flex>
                 ))}
               </VStack>
-              <Button colorScheme="blue" size="lg">
-                Choose Plan
-              </Button>
             </VStack>
+            <Button colorScheme="blue" size="lg" mt={4}>
+              Choose Plan
+            </Button>
           </Box>
         ))}
       </Flex>
