@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const Index = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const videos = [
     { src: "/images/video1.jpg", title: "How to Cook the Perfect Steak", profile: "/images/profile1.jpg" },
@@ -18,6 +19,8 @@ const Index = () => {
     { src: "/images/video9.jpg", title: "How to Build a Successful Online Business", profile: "/images/profile9.jpg" },
   ];
 
+  const filteredVideos = videos.filter(video => video.title.toLowerCase().includes(searchQuery.toLowerCase()));
+
   return (
     <Container maxW="container.xl" p={0}>
       {/* Navbar */}
@@ -27,7 +30,7 @@ const Index = () => {
         </Box>
         <InputGroup maxW="400px">
           <InputLeftElement pointerEvents="none" children={<FaSearch color="gray.300" />} />
-          <Input type="text" placeholder="Search" bg="white" color="black" />
+          <Input type="text" placeholder="Search" bg="white" color="black" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
         </InputGroup>
         <Flex alignItems="center">
           <Button leftIcon={<FaUserPlus />} colorScheme="red" variant="solid" mr={4}>
@@ -72,7 +75,7 @@ const Index = () => {
         {/* Video Section */}
         <Box w="80%" p={4}>
           <Grid templateColumns="repeat(3, 1fr)" gap={6} p={4}>
-            {videos.map((video, index) => (
+            {filteredVideos.map((video, index) => (
               <GridItem key={index} w="100%" h="auto" bg="gray.200" p={2} borderRadius="15px" boxShadow="md" display="flex" flexDirection="column" alignItems="center" position="relative" cursor="pointer" _hover={{ transform: 'scale(1.05)' }}>
                 <Image src={video.profile} alt="Profile Image" borderRadius="full" boxSize="30px" position="absolute" top="10px" right="10px" m={2} />
                 <Image src={video.src} alt={video.title} borderRadius="15px" objectFit="cover" w="100%" h="150px" />
