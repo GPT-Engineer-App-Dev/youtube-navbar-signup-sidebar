@@ -1,9 +1,10 @@
 import { Box, Container, Flex, VStack, Text, Button, Image, Grid, GridItem, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaUserPlus, FaSearch, FaMicrophone, FaPlusSquare, FaBell } from "react-icons/fa";
 import { useState } from "react";
 
 const Index = () => {
+  const navigate = useNavigate();
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -33,7 +34,7 @@ const Index = () => {
           <Input type="text" placeholder="Search" bg="white" color="black" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
         </InputGroup>
         <Flex alignItems="center">
-          <Button leftIcon={<FaUserPlus />} colorScheme="red" variant="solid" mr={4}>
+          <Button leftIcon={<FaUserPlus />} colorScheme="red" variant="solid" mr={4} onClick={() => navigate('/signup')}>
             Sign Up
           </Button>
           <FaMicrophone size="24px" style={{ marginRight: '16px' }} />
@@ -65,15 +66,13 @@ const Index = () => {
         {/* Sidebar */}
         <Box w="20%" bg="gray.100" p={4}>
           <VStack align="start" spacing={4}>
-            <Text>Home</Text>
-            <Text>Trending</Text>
+            <Link to="/">Home</Link>
             <Link to="/subscriptions">Subscriptions</Link>
-            <Text>Library</Text>
           </VStack>
         </Box>
 
         {/* Video Section */}
-        <Box w="80%" p={4}>
+        <Box w="80%" p={4} style={{ height: 'calc(100vh - 80px)', overflowY: 'auto' }}>
           <Grid templateColumns="repeat(3, 1fr)" gap={6} p={4}>
             {filteredVideos.map((video, index) => (
               <GridItem key={index} w="100%" h="auto" bg="gray.200" p={2} borderRadius="15px" boxShadow="md" display="flex" flexDirection="column" alignItems="center" position="relative" cursor="pointer" _hover={{ transform: 'scale(1.05)' }}>

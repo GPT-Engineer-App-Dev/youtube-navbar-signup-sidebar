@@ -1,4 +1,5 @@
 import { Box, Text, Flex, VStack, Heading, Button, Icon } from "@chakra-ui/react";
+import { Link } from 'react-router-dom';
 import { FaCheckCircle } from "react-icons/fa";
 
 const Subscriptions = () => {
@@ -24,49 +25,60 @@ const Subscriptions = () => {
   ];
 
   return (
-    <Box p={4}>
-      <Heading as="h1" size="xl" textAlign="center" mb={6}>
-        Subscription Plans
-      </Heading>
-      <Flex justifyContent="center" gap={6}>
-        {plans.map((plan, index) => (
-          <Box
-            key={index}
-            borderWidth="1px"
-            borderRadius="lg"
-            overflow="hidden"
-            p={6}
-            bg="white"
-            boxShadow="md"
-            width="300px"
-            display="flex"
-            flexDirection="column"
-            justifyContent="space-between"
-          >
-            <VStack spacing={4}>
-              <Heading as="h2" size="md">
-                {plan.name}
-              </Heading>
-              <Text fontSize="2xl" fontWeight="bold">
-                {plan.price}
-              </Text>
-              <Text fontSize="md" mb={4}>{plan.description}</Text>
-              <VStack spacing={2} alignItems="start">
-                {plan.features.map((feature, idx) => (
-                  <Flex key={idx} align="center">
-                    <Icon as={FaCheckCircle} color="green.500" mr={2} />
-                    <Text>{feature}</Text>
-                  </Flex>
-                ))}
+    <Flex>
+      {/* Sidebar */}
+      <Box w="20%" bg="gray.100" p={4}>
+        <VStack align="start" spacing={4}>
+          <Link to="/">Home</Link>
+          <Link to="/subscriptions">Subscriptions</Link>
+        </VStack>
+      </Box>
+
+      {/* Main Content */}
+      <Box w="80%" p={4}>
+        <Heading as="h1" size="xl" textAlign="center" mb={6}>
+          Subscription Plans
+        </Heading>
+        <Flex justifyContent="center" gap={6}>
+          {plans.map((plan, index) => (
+            <Box
+              key={index}
+              borderWidth="1px"
+              borderRadius="lg"
+              overflow="hidden"
+              p={6}
+              bg="white"
+              boxShadow="md"
+              width="300px"
+              display="flex"
+              flexDirection="column"
+              justifyContent="space-between"
+            >
+              <VStack spacing={4}>
+                <Heading as="h2" size="md">
+                  {plan.name}
+                </Heading>
+                <Text fontSize="2xl" fontWeight="bold">
+                  {plan.price}
+                </Text>
+                <Text fontSize="md" mb={4}>{plan.description}</Text>
+                <VStack spacing={2} alignItems="start">
+                  {plan.features.map((feature, idx) => (
+                    <Flex key={idx} align="center">
+                      <Icon as={FaCheckCircle} color="green.500" mr={2} />
+                      <Text>{feature}</Text>
+                    </Flex>
+                  ))}
+                </VStack>
               </VStack>
-            </VStack>
-            <Button colorScheme="blue" size="lg" mt={4}>
-              Choose Plan
-            </Button>
-          </Box>
-        ))}
-      </Flex>
-    </Box>
+              <Button colorScheme="blue" size="lg" mt={4}>
+                Choose Plan
+              </Button>
+            </Box>
+          ))}
+        </Flex>
+      </Box>
+    </Flex>
   );
 };
 
