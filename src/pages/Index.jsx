@@ -53,7 +53,7 @@ const Index = () => {
           <Grid templateColumns="repeat(3, 1fr)" gap={6} p={4}>
             {videos.map((video, index) => (
               <GridItem key={index} w="100%" h="auto" bg="gray.200" p={2} borderRadius="15px" boxShadow="md" display="flex" flexDirection="column" alignItems="center" position="relative">
-                <Image src={video.profile} alt="Profile Image" borderRadius="full" boxSize="40px" position="absolute" top="10px" left="10px" />
+                <Image src={video.profile} alt="Profile Image" borderRadius="full" boxSize="40px" position="absolute" bottom="10px" left="10px" />
                 <Image src={video.src} alt={video.title} borderRadius="15px" objectFit="cover" w="100%" h="150px" />
                 <Text mt={2} textAlign="center" noOfLines={2}>{video.title}</Text>
               </GridItem>
