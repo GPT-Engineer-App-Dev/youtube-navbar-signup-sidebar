@@ -46,10 +46,10 @@ const Index = () => {
               _hover={{ transform: 'scale(1.1)' }}
             />
             {dropdownVisible && (
-              <Box position="absolute" top="50px" right="0" bg="white" boxShadow="md" borderRadius="md" p={4}>
-                <Text>Profile</Text>
-                <Text>Settings</Text>
-                <Text>Logout</Text>
+              <Box position="absolute" top="50px" right="0" bg="white" boxShadow="md" borderRadius="md" p={4} border="1px solid #ccc">
+                <Text p={2} _hover={{ bg: "gray.100", cursor: "pointer" }}>Profile</Text>
+                <Text p={2} _hover={{ bg: "gray.100", cursor: "pointer" }}>Settings</Text>
+                <Text p={2} _hover={{ bg: "gray.100", cursor: "pointer" }}>Logout</Text>
               </Box>
             )}
           </Box>
@@ -73,7 +73,7 @@ const Index = () => {
           <Grid templateColumns="repeat(3, 1fr)" gap={6} p={4}>
             {videos.map((video, index) => (
               <GridItem key={index} w="100%" h="auto" bg="gray.200" p={2} borderRadius="15px" boxShadow="md" display="flex" flexDirection="column" alignItems="center" position="relative" cursor="pointer" _hover={{ transform: 'scale(1.05)' }}>
-                <Image src={video.profile} alt="Profile Image" borderRadius="full" boxSize="40px" position="absolute" bottom="10px" left="10px" m={2} />
+                <Image src={video.profile} alt="Profile Image" borderRadius="full" boxSize="30px" position="absolute" top="10px" right="10px" m={2} />
                 <Image src={video.src} alt={video.title} borderRadius="15px" objectFit="cover" w="100%" h="150px" />
                 <Text mt={2} textAlign="center" noOfLines={2} fontSize="sm" ml={2}>{video.title}</Text>
               </GridItem>
