@@ -1,6 +1,5 @@
 import { Box, Button, Container, Flex, FormControl, FormLabel, Heading, Input, Text, VStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
