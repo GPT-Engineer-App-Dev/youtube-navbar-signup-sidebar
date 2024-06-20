@@ -39,8 +39,8 @@ const Index = () => {
               { src: "/images/video3.jpg", title: "The Ultimate Guide to Yoga for Beginners" },
               { src: "/images/video4.jpg", title: "DIY Home Decor Ideas on a Budget" },
               { src: "/images/video5.jpg", title: "The Science Behind Climate Change Explained" },
-              { src: "/images/video6-new.jpg", title: "Mastering the Art of Photography: Tips and Tricks" },
-              { src: "/images/video7-new.jpg", title: "Exploring the Wonders of the Deep Sea" },
+              { src: "/images/video6-correct.jpg", title: "Mastering the Art of Photography: Tips and Tricks" },
+              { src: "/images/video7-correct.jpg", title: "Exploring the Wonders of the Deep Sea" },
               { src: "/images/video8.jpg", title: "The History of Ancient Civilizations" },
               { src: "/images/video9.jpg", title: "How to Build a Successful Online Business" },
             ].map((video, index) => (
