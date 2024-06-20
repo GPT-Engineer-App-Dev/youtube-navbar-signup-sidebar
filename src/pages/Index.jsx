@@ -1,5 +1,5 @@
-import { Box, Container, Flex, VStack, Text, Button, Image, Grid, GridItem } from "@chakra-ui/react";
-import { FaUserPlus } from "react-icons/fa";
+import { Box, Container, Flex, VStack, Text, Button, Image, Grid, GridItem, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import { FaUserPlus, FaSearch } from "react-icons/fa";
 
 const Index = () => {
   return (
@@ -9,6 +9,10 @@ const Index = () => {
         <Box>
           <Image src="/images/youtube-logo.svg" alt="YouTube Logo" boxSize="40px" />
         </Box>
+        <InputGroup maxW="400px">
+          <InputLeftElement pointerEvents="none" children={<FaSearch color="gray.300" />} />
+          <Input type="text" placeholder="Search" bg="white" color="black" />
+        </InputGroup>
         <Button leftIcon={<FaUserPlus />} colorScheme="teal" variant="solid">
           Sign Up
         </Button>
