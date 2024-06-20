@@ -29,10 +29,20 @@ const Index = () => {
         {/* Video Section */}
         <Box w="80%" p={4}>
           <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-            {Array.from({ length: 9 }).map((_, index) => (
+            {[
+              { src: "/images/video1.jpg", title: "Video Title 1" },
+              { src: "/images/video2.jpg", title: "Video Title 2" },
+              { src: "/images/video3.jpg", title: "Video Title 3" },
+              { src: "/images/video4.jpg", title: "Video Title 4" },
+              { src: "/images/video5.jpg", title: "Video Title 5" },
+              { src: "/images/video6.jpg", title: "Video Title 6" },
+              { src: "/images/video7.jpg", title: "Video Title 7" },
+              { src: "/images/video8.jpg", title: "Video Title 8" },
+              { src: "/images/video9.jpg", title: "Video Title 9" },
+            ].map((video, index) => (
               <GridItem key={index} w="100%" h="200px" bg="gray.200">
-                <Image src={`https://via.placeholder.com/300x200?text=Video+${index + 1}`} alt={`Video ${index + 1}`} />
-                <Text mt={2}>Video Title {index + 1}</Text>
+                <Image src={video.src} alt={video.title} />
+                <Text mt={2}>{video.title}</Text>
               </GridItem>
             ))}
           </Grid>
