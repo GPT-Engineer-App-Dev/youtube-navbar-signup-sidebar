@@ -1,4 +1,4 @@
-import { Box, Text, Flex, VStack, Heading, Button, Icon, Container } from "@chakra-ui/react";
+import { Box, Text, Flex, VStack, Heading, Button, Icon } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
 

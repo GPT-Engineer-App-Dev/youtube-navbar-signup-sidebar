@@ -1,11 +1,10 @@
 import { Box, Container, Flex, VStack, Text, Button, Image, Grid, GridItem, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaUserPlus, FaSearch, FaMicrophone, FaPlusSquare, FaBell } from "react-icons/fa";
 import { useState } from "react";
 
 const Index = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
 
   const videos = [
@@ -34,9 +33,11 @@ const Index = () => {
           <Input type="text" placeholder="Search" bg="white" color="black" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
         </InputGroup>
         <Flex alignItems="center">
-          <Button leftIcon={<FaUserPlus />} colorScheme="red" variant="solid" mr={4} onClick={() => navigate('/signup')}>
-            Sign Up
-          </Button>
+          <Link to="/signup">
+            <Button leftIcon={<FaUserPlus />} colorScheme="red" variant="solid" mr={4}>
+              Sign Up
+            </Button>
+          </Link>
           <FaMicrophone size="24px" style={{ marginRight: '16px' }} />
           <FaPlusSquare size="24px" style={{ marginRight: '16px' }} />
           <FaBell size="24px" style={{ marginRight: '16px' }} />
@@ -66,7 +67,7 @@ const Index = () => {
         {/* Sidebar */}
         <Box w="20%" bg="gray.100" p={4}>
           <VStack align="start" spacing={4}>
-            <Text>Home</Text>
+            <Link to="/">Home</Link>
             <Text>Trending</Text>
             <Link to="/subscriptions">Subscriptions</Link>
             <Text>Library</Text>
@@ -74,7 +75,7 @@ const Index = () => {
         </Box>
 
         {/* Video Section */}
-        <Box w="80%" p={4} h="calc(100vh - 80px)" overflowY="auto">
+        <Box w="80%" p={4} minH="80vh">
           <Grid templateColumns="repeat(3, 1fr)" gap={6} p={4}>
             {filteredVideos.map((video, index) => (
               <GridItem key={index} w="100%" h="auto" bg="gray.200" p={2} borderRadius="15px" boxShadow="md" display="flex" flexDirection="column" alignItems="center" position="relative" cursor="pointer" _hover={{ transform: 'scale(1.05)' }}>
