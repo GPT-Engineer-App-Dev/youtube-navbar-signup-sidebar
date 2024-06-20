@@ -7,7 +7,7 @@ const Index = () => {
       {/* Navbar */}
       <Flex as="nav" bg="gray.800" color="white" p={4} justifyContent="space-between" alignItems="center">
         <Box>
-          <Text fontSize="2xl" fontWeight="bold">YouTube</Text>
+          <Image src="/images/youtube-logo.svg" alt="YouTube Logo" boxSize="40px" />
         </Box>
         <Button leftIcon={<FaUserPlus />} colorScheme="teal" variant="solid">
           Sign Up
