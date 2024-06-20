@@ -1,5 +1,5 @@
 import { Box, Container, Flex, VStack, Text, Button, Image, Grid, GridItem, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
-import { FaUserPlus, FaSearch } from "react-icons/fa";
+import { FaUserPlus, FaSearch, FaMicrophone, FaPlusSquare, FaBell } from "react-icons/fa";
 
 const Index = () => {
   const videos = [
@@ -17,7 +17,7 @@ const Index = () => {
   return (
     <Container maxW="container.xl" p={0}>
       {/* Navbar */}
-      <Flex as="nav" bg="gray.800" color="white" p={4} justifyContent="space-between" alignItems="center">
+      <Flex as="nav" bg="black" color="white" p={4} justifyContent="space-between" alignItems="center">
         <Box>
           <Image src="/images/youtube-logo.svg" alt="YouTube Logo" boxSize="80px" />
         </Box>
@@ -25,9 +25,15 @@ const Index = () => {
           <InputLeftElement pointerEvents="none" children={<FaSearch color="gray.300" />} />
           <Input type="text" placeholder="Search" bg="white" color="black" />
         </InputGroup>
-        <Button leftIcon={<FaUserPlus />} colorScheme="teal" variant="solid">
-          Sign Up
-        </Button>
+        <Flex alignItems="center">
+          <Button leftIcon={<FaUserPlus />} colorScheme="teal" variant="solid" mr={4}>
+            Sign Up
+          </Button>
+          <FaMicrophone size="24px" style={{ marginRight: '16px' }} />
+          <FaPlusSquare size="24px" style={{ marginRight: '16px' }} />
+          <FaBell size="24px" style={{ marginRight: '16px' }} />
+          <Image src="/images/profile1.jpg" alt="Profile Image" borderRadius="full" boxSize="40px" />
+        </Flex>
       </Flex>
 
       {/* Main Content */}
