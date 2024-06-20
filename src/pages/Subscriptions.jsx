@@ -7,16 +7,19 @@ const Subscriptions = () => {
       name: "Basic Plan",
       price: "$9.99/month",
       features: ["Access to basic content", "Standard video quality", "Limited support"],
+      description: "Ideal for casual viewers who want access to essential content.",
     },
     {
       name: "Standard Plan",
       price: "$19.99/month",
       features: ["Access to all content", "HD video quality", "Priority support", "Offline downloads"],
+      description: "Perfect for regular viewers who want more content and better quality.",
     },
     {
       name: "Premium Plan",
       price: "$29.99/month",
       features: ["Access to all content", "4K video quality", "24/7 support", "Offline downloads", "Ad-free experience"],
+      description: "Best for avid viewers who want the ultimate viewing experience with all features.",
     },
   ];
 
@@ -47,6 +50,7 @@ const Subscriptions = () => {
               <Text fontSize="2xl" fontWeight="bold">
                 {plan.price}
               </Text>
+              <Text fontSize="md" mb={4}>{plan.description}</Text>
               <VStack spacing={2} alignItems="start">
                 {plan.features.map((feature, idx) => (
                   <Flex key={idx} align="center">
