@@ -46,7 +46,7 @@ const Index = () => {
               _hover={{ transform: 'scale(1.1)' }}
             />
             {dropdownVisible && (
-              <Box position="absolute" top="50px" right="0" bg="white" boxShadow="md" borderRadius="md" p={4} border="1px solid #ccc">
+              <Box position="absolute" top="50px" right="0" bg="teal.500" boxShadow="md" borderRadius="md" p={4} border="1px solid #ccc" zIndex={10}>
                 <Text p={2} _hover={{ bg: "gray.100", cursor: "pointer" }}>Profile</Text>
                 <Text p={2} _hover={{ bg: "gray.100", cursor: "pointer" }}>Settings</Text>
                 <Text p={2} _hover={{ bg: "gray.100", cursor: "pointer" }}>Logout</Text>
