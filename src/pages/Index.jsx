@@ -44,9 +44,9 @@ const Index = () => {
               { src: "/images/video8.jpg", title: "The History of Ancient Civilizations" },
               { src: "/images/video9.jpg", title: "How to Build a Successful Online Business" },
             ].map((video, index) => (
-              <GridItem key={index} w="100%" h="200px" bg="gray.200" p={2} borderRadius="15px" boxShadow="md">
-                <Image src={video.src} alt={video.title} borderRadius="15px" />
-                <Text mt={2}>{video.title}</Text>
+              <GridItem key={index} w="100%" h="auto" bg="gray.200" p={2} borderRadius="15px" boxShadow="md" display="flex" flexDirection="column" alignItems="center">
+                <Image src={video.src} alt={video.title} borderRadius="15px" objectFit="cover" w="100%" h="150px" />
+                <Text mt={2} textAlign="center" noOfLines={2}>{video.title}</Text>
               </GridItem>
             ))}
           </Grid>
