@@ -7,7 +7,7 @@ const Index = () => {
       {/* Navbar */}
       <Flex as="nav" bg="gray.800" color="white" p={4} justifyContent="space-between" alignItems="center">
         <Box>
-          <Image src="/images/youtube-logo.svg" alt="YouTube Logo" boxSize="40px" />
+          <Image src="/images/youtube-logo.svg" alt="YouTube Logo" boxSize="80px" />
         </Box>
         <InputGroup maxW="400px">
           <InputLeftElement pointerEvents="none" children={<FaSearch color="gray.300" />} />
