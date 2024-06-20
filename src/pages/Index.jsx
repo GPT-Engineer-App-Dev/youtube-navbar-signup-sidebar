@@ -1,4 +1,5 @@
 import { Box, Container, Flex, VStack, Text, Button, Image, Grid, GridItem, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { FaUserPlus, FaSearch, FaMicrophone, FaPlusSquare, FaBell } from "react-icons/fa";
 import { useState } from "react";
 
@@ -63,7 +64,7 @@ const Index = () => {
           <VStack align="start" spacing={4}>
             <Text>Home</Text>
             <Text>Trending</Text>
-            <Text>Subscriptions</Text>
+            <Link to="/subscriptions">Subscriptions</Link>
             <Text>Library</Text>
           </VStack>
         </Box>
