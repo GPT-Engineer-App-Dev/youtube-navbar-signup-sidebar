@@ -1,7 +1,10 @@
 import { Box, Container, Flex, VStack, Text, Button, Image, Grid, GridItem, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { FaUserPlus, FaSearch, FaMicrophone, FaPlusSquare, FaBell } from "react-icons/fa";
+import { useState } from "react";
 
 const Index = () => {
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+
   const videos = [
     { src: "/images/video1.jpg", title: "How to Cook the Perfect Steak", profile: "/images/profile1.jpg" },
     { src: "/images/video2.jpg", title: "Top 10 Travel Destinations for 2023", profile: "/images/profile2.jpg" },
@@ -32,7 +35,24 @@ const Index = () => {
           <FaMicrophone size="24px" style={{ marginRight: '16px' }} />
           <FaPlusSquare size="24px" style={{ marginRight: '16px' }} />
           <FaBell size="24px" style={{ marginRight: '16px' }} />
-          <Image src="/images/profile1.jpg" alt="Profile Image" borderRadius="full" boxSize="40px" />
+          <Box position="relative">
+            <Image
+              src="/images/profile1.jpg"
+              alt="Profile Image"
+              borderRadius="full"
+              boxSize="40px"
+              cursor="pointer"
+              onClick={() => setDropdownVisible(!dropdownVisible)}
+              _hover={{ transform: 'scale(1.1)' }}
+            />
+            {dropdownVisible && (
+              <Box position="absolute" top="50px" right="0" bg="white" boxShadow="md" borderRadius="md" p={4}>
+                <Text>Profile</Text>
+                <Text>Settings</Text>
+                <Text>Logout</Text>
+              </Box>
+            )}
+          </Box>
         </Flex>
       </Flex>
 
@@ -52,10 +72,10 @@ const Index = () => {
         <Box w="80%" p={4}>
           <Grid templateColumns="repeat(3, 1fr)" gap={6} p={4}>
             {videos.map((video, index) => (
-              <GridItem key={index} w="100%" h="auto" bg="gray.200" p={2} borderRadius="15px" boxShadow="md" display="flex" flexDirection="column" alignItems="center" position="relative">
-                <Image src={video.profile} alt="Profile Image" borderRadius="full" boxSize="40px" position="absolute" bottom="10px" left="10px" />
+              <GridItem key={index} w="100%" h="auto" bg="gray.200" p={2} borderRadius="15px" boxShadow="md" display="flex" flexDirection="column" alignItems="center" position="relative" cursor="pointer" _hover={{ transform: 'scale(1.05)' }}>
+                <Image src={video.profile} alt="Profile Image" borderRadius="full" boxSize="40px" position="absolute" bottom="10px" left="10px" m={2} />
                 <Image src={video.src} alt={video.title} borderRadius="15px" objectFit="cover" w="100%" h="150px" />
-                <Text mt={2} textAlign="center" noOfLines={2}>{video.title}</Text>
+                <Text mt={2} textAlign="center" noOfLines={2} fontSize="sm" ml={2}>{video.title}</Text>
               </GridItem>
             ))}
           </Grid>
